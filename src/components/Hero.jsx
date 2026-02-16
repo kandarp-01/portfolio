@@ -1,4 +1,5 @@
 import { Linkedin, Github, Code } from "lucide-react";
+import profile from "../assets/profile.png";
 
 export default function Hero() {
   return (
@@ -70,7 +71,7 @@ export default function Hero() {
         <div className="relative rounded-3xl p-[3px] bg-gradient-to-r from-cyan-300 via-slate-700 to-violet-500">
           <div className="rounded-3xl overflow-hidden bg-slate-950/80 backdrop-blur-xl shadow-xl">
             <img
-              src="src\assets\profile.png"    // <-- replace with your photo name
+              src={profile}
               alt="Profile"
               className="h-72 w-72 object-cover rounded-3xl transition-transform duration-700 group-hover:scale-105"
             />
