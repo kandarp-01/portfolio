@@ -8,6 +8,7 @@ import Achievements from "./components/Achievements";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import ProgressBar from "./components/ProgressBar";
+import "./App.css";
 
 function App() {
   return (
