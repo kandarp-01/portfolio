@@ -1,4 +1,9 @@
-import { Github, ExternalLink, X } from "lucide-react";
+import {
+  Github,
+  ExternalLink,
+  ChevronRight,
+} from "lucide-react";
+
 import { useState } from "react";
 
 export default function Projects() {
@@ -6,37 +11,85 @@ export default function Projects() {
 
   const projects = [
     {
-      title: "Interactive SQL Playground",
-      short:
-        "A web-based interactive SQL learning platform supporting live query execution & database visualization.",
-      description:
-        "Interactive SQL Playground enables users to write and execute SQL queries in real time, visualize table structures, explore database schema and practice structured SQL challenges.",
-      features: [
-        "Live SQL query execution",
-        "Database visualization panel",
-        "Schema exploration",
-        "Interactive practice mode",
-      ],
-      tech: ["React", "FastAPI", "MySQL"],
-      github: "https://github.com/kandarp-01/interactive-sql-playground",
-      demo: "https://sql-play-front.vercel.app/",
-    },
+  title: "Interactive SQL Playground",
+
+  category: "Full Stack",
+
+  short:
+    "Interactive web platform for practicing and executing SQL queries in real time.",
+
+  description:
+    "Developed a responsive SQL playground that allows users to write, execute and test SQL queries through an interactive web interface with real-time database interaction and schema exploration.",
+
+  highlights: [
+    "Built full-stack application using React and FastAPI",
+    "Implemented real-time SQL query execution workflow",
+    "Added schema visualization and database exploration support",
+    "Integrated backend APIs for query processing and result handling",
+    "Implemented input sanitization for safer query execution",
+    "Designed responsive developer-focused UI for SQL practice and learning",
+  ],
+
+  tech: [
+    "React",
+    "FastAPI",
+    "MySQL",
+    "REST APIs",
+  ],
+
+  metrics: [
+    "Real-time query execution",
+    "REST API integration",
+    "Responsive full-stack application",
+  ],
+
+  github:
+    "https://github.com/kandarp-01/interactive-sql-playground",
+
+  demo:
+    "https://sql-play-front.vercel.app/",
+},
+
     {
-      title: "Toxic Comment Classifier (ML)",
-      short:
-        "ML model for detecting toxic, abusive & hate content using NLP.",
-      description:
-        "A machine learning multi-label classifier to detect and categorize toxic comments using TF-IDF vectorization and Logistic Regression. Helps improve online community moderation.",
-      features: [
-        "Multi-label model",
-        "TF-IDF preprocessing",
-        "Training & evaluation pipeline",
-        "Dataset augmentation",
-      ],
-      tech: ["Python", "Scikit-Learn", "Pandas", "NumPy"],
-      github: "https://github.com/kandarp-01/toxic-comment-classifier",
-      demo: "https://toxicguard.vercel.app/",
-    },
+  title: "Toxic Comment Classifier",
+
+  category: "Machine Learning",
+
+  short:
+    "Multi-label toxic comment classification system using NLP preprocessing and machine learning models.",
+
+  description:
+    "Built a toxic comment classification pipeline using TF-IDF vectorization and traditional machine learning techniques to identify toxic, obscene and abusive comments from online discussions.",
+
+  highlights: [
+    "Worked with Jigsaw Toxic Comment dataset containing 150k+ comments",
+    "Implemented preprocessing pipeline using regex cleaning and TF-IDF vectorization",
+    "Handled severe class imbalance using SMOTE and back-translation augmentation",
+    "Benchmarked Logistic Regression, Naive Bayes and LinearSVC models",
+    "Achieved best performance using LinearSVC with 97% accuracy",
+    "Designed multi-label classification workflow for toxicity detection",
+  ],
+
+  tech: [
+    "Python",
+    "Scikit-learn",
+    "Pandas",
+    "NumPy",
+    "NLP",
+  ],
+
+  metrics: [
+    "150k+ comments dataset",
+    "97% model accuracy",
+    "Multi-label classification",
+  ],
+
+  github:
+    "https://github.com/kandarp-01/toxic-comment-classifier",
+
+  demo:
+    "https://toxicguard.vercel.app/",
+},
   ];
 
   return (
@@ -44,125 +97,200 @@ export default function Projects() {
 
       {/* Heading */}
       <div className="text-center md:text-left">
+
         <h2 className="text-3xl font-semibold tracking-wide">
+
           <span className="bg-gradient-to-r from-cyan-300 to-violet-500 bg-clip-text text-transparent">
             Projects
           </span>
+
         </h2>
-        <div className="mt-2 h-1 w-24 mx-auto md:ml-0 rounded-full bg-gradient-to-r from-cyan-400 to-violet-500 shadow-[0_0_20px_rgba(56,189,248,0.7)]" />
+
+        <div
+          className="
+            mt-2 h-1 w-24 rounded-full
+            bg-gradient-to-r from-cyan-400 to-violet-500
+            shadow-[0_0_20px_rgba(56,189,248,0.7)]
+            mx-auto md:ml-0
+          "
+        />
+
       </div>
 
-      {/* Project Grid */}
-      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-        {projects.map((project, index) => (
+      {/* Projects Grid */}
+      <div className="grid gap-8 lg:grid-cols-2">
+
+        {projects.map((project) => (
           <div
-            key={index}
-            onClick={() => setSelectedProject(project)}
+            key={project.title}
             className="
-              group relative cursor-pointer rounded-2xl border border-cyan-400/30 bg-slate-900/40 backdrop-blur-xl p-6
-              shadow-[0_0_35px_rgba(56,189,248,0.6)]
-              transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_55px_rgba(56,189,248,1)]
+              group relative overflow-hidden rounded-2xl
+              border border-cyan-400/20
+              bg-slate-900/40 p-6
+              backdrop-blur-xl
+              transition-all duration-300
+              hover:-translate-y-2
+              hover:shadow-[0_0_40px_rgba(56,189,248,0.3)]
             "
           >
-            {/* Glow Frame */}
+
+            {/* Glow */}
             <div
               className="
-                absolute inset-0 rounded-2xl bg-gradient-to-r from-cyan-400/25 to-violet-600/25 blur-2xl
-                opacity-0 group-hover:opacity-100 transition-opacity duration-700
+                absolute inset-0 rounded-2xl
+                bg-gradient-to-r from-cyan-400/10 to-violet-500/10
+                opacity-0 blur-2xl
+                transition-opacity duration-500
+                group-hover:opacity-100
               "
             />
 
-            <div className="relative z-10">
-              <h3 className="text-lg font-semibold bg-gradient-to-r from-cyan-300 to-violet-500 bg-clip-text text-transparent">
-                {project.title}
-              </h3>
+            <div className="relative z-10 space-y-5">
 
-              <p className="mt-3 text-sm text-slate-300 leading-relaxed">
-                {project.short}
-              </p>
+              {/* Top */}
+              <div className="space-y-3">
 
-              <div className="flex flex-wrap gap-2 mt-4">
-                {project.tech.map((t, i) => (
-                  <span
-                    key={i}
-                    className="rounded-lg border border-cyan-400/40 bg-slate-950/40 px-2 py-[3px] text-[10px] text-cyan-300 font-medium tracking-wide"
-                  >
-                    {t}
-                  </span>
-                ))}
+                {/* Category */}
+                <span
+                  className="
+                    inline-block rounded-full
+                    border border-cyan-400/20
+                    bg-slate-950/50 px-3 py-1
+                    text-xs text-cyan-300
+                  "
+                >
+                  {project.category}
+                </span>
+
+                {/* Title */}
+                <h3 className="text-2xl font-semibold text-slate-100">
+                  {project.title}
+                </h3>
+
+                {/* Description */}
+                <p className="leading-relaxed text-slate-400">
+                  {project.description}
+                </p>
+
               </div>
 
-              <div className="mt-6 flex gap-4">
+              {/* Metrics */}
+              <div className="flex flex-wrap gap-3">
+
+                {project.metrics.map((metric) => (
+                  <div
+                    key={metric}
+                    className="
+                      rounded-xl border border-cyan-400/20
+                      bg-slate-950/40 px-3 py-2
+                      text-sm text-slate-200
+                    "
+                  >
+                    {metric}
+                  </div>
+                ))}
+
+              </div>
+
+              {/* Highlights */}
+              <div className="space-y-3">
+
+                <h4 className="text-sm font-semibold tracking-wide text-cyan-300">
+                  Key Highlights
+                </h4>
+
+                <div className="space-y-2">
+
+                  {project.highlights.map((point) => (
+                    <div
+                      key={point}
+                      className="flex items-start gap-2 text-sm text-slate-300"
+                    >
+
+                      <ChevronRight
+                        size={16}
+                        className="mt-[2px] text-cyan-300"
+                      />
+
+                      <span>{point}</span>
+
+                    </div>
+                  ))}
+
+                </div>
+              </div>
+
+              {/* Tech Stack */}
+              <div className="flex flex-wrap gap-3">
+
+                {project.tech.map((tech) => (
+                  <span
+                    key={tech}
+                    className="
+                      rounded-xl border border-cyan-400/20
+                      bg-slate-950/50 px-3 py-2
+                      text-sm text-cyan-300
+                    "
+                  >
+                    {tech}
+                  </span>
+                ))}
+
+              </div>
+
+              {/* Buttons */}
+              <div className="flex flex-wrap gap-4 pt-2">
+
                 <a
                   href={project.github}
                   target="_blank"
+                  rel="noreferrer"
                   className="
-                    flex items-center gap-1 rounded-lg border border-cyan-400/40 px-4 py-2 text-xs text-cyan-300
-                    transition hover:scale-110 hover:text-violet-300 hover:border-violet-400
-                    shadow-[0_0_25px_rgba(56,189,248,0.5)]
+                    flex items-center gap-2 rounded-xl
+                    border border-cyan-400/20
+                    px-5 py-3 text-sm text-cyan-300
+                    transition-all duration-300
+                    hover:border-violet-400
+                    hover:text-violet-300
+                    hover:scale-105
                   "
                 >
-                  <Github size={14} /> Code
+                  <Github size={18} />
+                  GitHub
                 </a>
 
                 <a
                   href={project.demo}
                   target="_blank"
+                  rel="noreferrer"
                   className="
-                    flex items-center gap-1 rounded-lg bg-gradient-to-r from-cyan-400 to-violet-500 px-4 py-2 text-xs
-                    font-semibold text-slate-900 transition hover:scale-110 shadow-[0_0_25px_rgba(56,189,248,0.8)]
+                    flex items-center gap-2 rounded-xl
+                    bg-gradient-to-r from-cyan-400 to-violet-500
+                    px-5 py-3 text-sm font-semibold text-slate-950
+                    transition-all duration-300
+                    hover:scale-105
+                    shadow-[0_0_25px_rgba(56,189,248,0.3)]
                   "
                 >
-                  <ExternalLink size={14} /> Live
+                  <ExternalLink size={18} />
+                  Live Demo
                 </a>
+
               </div>
             </div>
           </div>
         ))}
       </div>
 
-      {/* Modal Overview */}
-      {selectedProject && (
-        <div className="fixed inset-0 bg-black/70 backdrop-blur-lg flex justify-center items-center z-50 p-4">
-          <div className="relative max-w-2xl w-full rounded-2xl border border-cyan-400/40 bg-slate-900/80 p-8 shadow-[0_0_60px_rgba(56,189,248,1)]">
+      {/* Bottom Note */}
+      <div className="text-center">
 
-            <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-cyan-400/20 to-violet-600/20 blur-3xl"></div>
+        <p className="mx-auto max-w-2xl text-sm leading-relaxed text-slate-400">
+          I enjoy building practical software projects that combine clean UI,
+          strong backend fundamentals and problem-solving oriented development.
+        </p>
 
-            <button
-              className="absolute top-4 right-4 text-slate-300 hover:text-cyan-300 transition z-20"
-              onClick={() => setSelectedProject(null)}
-            >
-              <X size={22} />
-            </button>
-
-            <div className="relative z-10">
-              <h3 className="text-2xl font-semibold bg-gradient-to-r from-cyan-300 to-violet-500 bg-clip-text text-transparent">
-                {selectedProject.title}
-              </h3>
-
-              <p className="mt-3 text-sm text-slate-300 leading-relaxed">
-                {selectedProject.description}
-              </p>
-
-              <h4 className="mt-5 text-sm font-semibold text-cyan-300">Key Features</h4>
-              <ul className="mt-2 space-y-1 text-sm text-slate-300">
-                {selectedProject.features.map((f, i) => (
-                  <li key={i}>• {f}</li>
-                ))}
-              </ul>
-
-              <h4 className="mt-5 text-sm font-semibold text-cyan-300">Tech Used</h4>
-              <div className="flex flex-wrap gap-2 mt-2">
-                {selectedProject.tech.map((t, i) => (
-                  <span key={i} className="rounded-lg border border-cyan-400/40 bg-slate-950/40 px-2 py-[3px] text-[10px] text-cyan-300">
-                    {t}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
+      </div>
     </section>
   );
 }
