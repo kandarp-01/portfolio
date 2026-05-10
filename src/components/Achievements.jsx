@@ -1,30 +1,39 @@
-import { Trophy, Award, Star, BadgeCheck } from "lucide-react";
+import {
+  Trophy,
+  Award,
+  Star,
+  BadgeCheck,
+} from "lucide-react";
 
 const achievementSections = [
   {
     category: "Competitive Programming",
+
     icon: (
       <Star
         size={20}
-        className="text-cyan-300 drop-shadow-[0_0_10px_rgba(56,189,248,0.7)]"
+        className="text-cyan-300"
       />
     ),
+
     items: [
-      "Solved 600+ Problems on LeetCode",
-      "5⭐ HackerRank in Problem Solving",
-      "5⭐ HackerRank in Python",
-      "Strong foundation in DSA, OOPs, DBMS & Computer Networks",
+      "Solved 600+ LeetCode problems",
+      "5★ HackerRank in Problem Solving",
+      "5★ HackerRank in Python",
+      "Strong understanding of DSA, OOPs and DBMS",
     ],
   },
 
   {
     category: "Certifications",
+
     icon: (
       <BadgeCheck
         size={20}
-        className="text-cyan-300 drop-shadow-[0_0_10px_rgba(56,189,248,0.7)]"
+        className="text-cyan-300"
       />
     ),
+
     items: [
       "IBM — Python for Data Science, AI & Development",
       "IBM — Generative AI: Prompt Engineering Basics",
@@ -35,16 +44,18 @@ const achievementSections = [
 
   {
     category: "Achievements",
+
     icon: (
       <Award
         size={20}
-        className="text-cyan-300 drop-shadow-[0_0_10px_rgba(56,189,248,0.7)]"
+        className="text-cyan-300"
       />
     ),
+
     items: [
       "Qualified GATE 2026 — Computer Science",
       "Python Developer Intern at Infosys Springboard",
-      "Annotated 300,000+ data points at Innodata with 95%+ accuracy",
+      "Worked on annotation of 300k+ data points at Innodata",
     ],
   },
 ];
@@ -53,68 +64,111 @@ export default function Achievements() {
   return (
     <section id="achievements" className="space-y-10">
 
-      {/* Title */}
+      {/* Heading */}
       <div className="text-center">
+
         <h2 className="text-3xl font-semibold tracking-wide">
+
           <span className="bg-gradient-to-r from-cyan-300 to-violet-500 bg-clip-text text-transparent">
             Achievements & Certifications
           </span>
+
         </h2>
 
-        <div className="mx-auto mt-2 h-[3px] w-44 rounded-full bg-gradient-to-r from-cyan-400 to-violet-500 shadow-[0_0_20px_rgba(56,189,248,0.8)]" />
+        <div
+          className="
+            mx-auto mt-2 h-[3px] w-52 rounded-full
+            bg-gradient-to-r from-cyan-400 to-violet-500
+            shadow-[0_0_20px_rgba(56,189,248,0.7)]
+          "
+        />
+
       </div>
 
-      {/* Cards Grid */}
-      <div className="grid gap-6 md:grid-cols-3">
-        {achievementSections.map((section, index) => (
+      {/* Grid */}
+      <div className="grid gap-6 lg:grid-cols-3">
+
+        {achievementSections.map((section) => (
           <div
-            key={index}
+            key={section.category}
             className="
-              group relative rounded-2xl border border-cyan-400/30
-              bg-slate-900/40 backdrop-blur-xl p-6
-              shadow-[0_0_35px_rgba(56,189,248,0.6)]
-              transition-all duration-500
+              group relative overflow-hidden rounded-2xl
+              border border-cyan-400/20
+              bg-slate-900/40 p-6
+              backdrop-blur-xl
+              transition-all duration-300
               hover:-translate-y-2
-              hover:shadow-[0_0_60px_rgba(56,189,248,1)]
+              hover:shadow-[0_0_35px_rgba(56,189,248,0.25)]
             "
           >
-            {/* Neon Glow */}
+
+            {/* Glow */}
             <div
               className="
                 absolute inset-0 rounded-2xl
-                bg-gradient-to-r from-cyan-400/25 to-violet-600/25
-                blur-2xl opacity-0
+                bg-gradient-to-r from-cyan-400/10 to-violet-500/10
+                opacity-0 blur-2xl
+                transition-opacity duration-500
                 group-hover:opacity-100
-                transition-opacity duration-700
               "
             />
 
             <div className="relative z-10">
 
-              {/* Heading */}
-              <div className="mb-4 flex items-center gap-2 text-lg font-semibold tracking-wide bg-gradient-to-r from-cyan-300 to-violet-500 bg-clip-text text-transparent">
-                {section.icon}
-                {section.category}
+              {/* Title */}
+              <div className="mb-5 flex items-center gap-3">
+
+                <div
+                  className="
+                    flex h-10 w-10 items-center justify-center
+                    rounded-xl border border-cyan-400/20
+                    bg-slate-950/40
+                  "
+                >
+                  {section.icon}
+                </div>
+
+                <h3 className="text-lg font-semibold text-slate-100">
+                  {section.category}
+                </h3>
+
               </div>
 
               {/* Items */}
-              <ul className="space-y-3 text-sm text-slate-300">
-                {section.items.map((item, i) => (
-                  <li
-                    key={i}
-                    className="flex gap-2 items-start text-slate-200 leading-relaxed"
+              <div className="space-y-4">
+
+                {section.items.map((item) => (
+                  <div
+                    key={item}
+                    className="flex items-start gap-3"
                   >
+
                     <Trophy
                       size={15}
-                      className="mt-1 text-violet-300 drop-shadow-[0_0_10px_rgba(139,92,246,0.7)]"
+                      className="mt-[4px] text-cyan-300"
                     />
-                    {item}
-                  </li>
+
+                    <p className="text-sm leading-relaxed text-slate-300">
+                      {item}
+                    </p>
+
+                  </div>
                 ))}
-              </ul>
+
+              </div>
             </div>
           </div>
         ))}
+      </div>
+
+      {/* Bottom Note */}
+      <div className="text-center">
+
+        <p className="mx-auto max-w-2xl text-sm leading-relaxed text-slate-400">
+          Focused on continuously improving technical skills through
+          problem solving, development projects and practical learning.
+        </p>
+
       </div>
     </section>
   );
