@@ -1,136 +1,277 @@
-import { Mail, MapPin, Phone, Send } from "lucide-react";
+import {
+  Mail,
+  Linkedin,
+  Github,
+  MapPin,
+} from "lucide-react";
 
 export default function Contact() {
   return (
-    <section id="contact" className="space-y-10 relative">
+    <section id="contact" className="space-y-10">
 
-      {/* Title */}
+      {/* Heading */}
       <div className="text-center">
+
         <h2 className="text-3xl font-semibold tracking-wide">
+
           <span className="bg-gradient-to-r from-cyan-300 to-violet-500 bg-clip-text text-transparent">
-            Get in Touch
+            Contact
           </span>
+
         </h2>
-        <div className="mx-auto mt-2 h-1 w-24 rounded-full bg-gradient-to-r from-cyan-400 to-violet-500 shadow-[0_0_20px_rgba(56,189,248,0.7)]" />
-        <p className="mt-3 text-sm text-slate-300/90">
-          Feel free to reach out for opportunities, collaboration or work inquiries.
-        </p>
-      </div>
 
-      {/* GRID */}
-      <div className="grid gap-8 md:grid-cols-2">
-
-        {/* LEFT SIDE INFO BOX */}
         <div
           className="
-            group relative rounded-2xl border border-cyan-400/30 bg-slate-900/40 backdrop-blur-xl p-6
-            shadow-[0_0_35px_rgba(56,189,248,0.6)] transition-all duration-500
-            hover:-translate-y-2 hover:shadow-[0_0_55px_rgba(56,189,248,1)]
+            mx-auto mt-2 h-[3px] w-28 rounded-full
+            bg-gradient-to-r from-cyan-400 to-violet-500
+            shadow-[0_0_20px_rgba(56,189,248,0.7)]
           "
-        >
-          {/* Glow overlay */}
+        />
+
+      </div>
+
+      {/* Main Container */}
+      <div
+        className="
+          group relative overflow-hidden rounded-3xl
+          border border-cyan-400/20
+          bg-slate-900/40 p-8
+          backdrop-blur-xl
+          transition-all duration-300
+          hover:shadow-[0_0_40px_rgba(56,189,248,0.2)]
+        "
+      >
+
+        {/* Glow */}
+        <div
+          className="
+            absolute inset-0 rounded-3xl
+            bg-gradient-to-r from-cyan-400/10 to-violet-500/10
+            opacity-0 blur-2xl
+            transition-opacity duration-500
+            group-hover:opacity-100
+          "
+        />
+
+        <div className="relative z-10 grid gap-10 lg:grid-cols-2">
+
+          {/* LEFT SIDE */}
+          <div className="space-y-6">
+
+            <div className="space-y-3">
+
+              <h3 className="text-2xl font-semibold text-slate-100">
+                Let’s Connect
+              </h3>
+
+              <p className="max-w-md leading-relaxed text-slate-400">
+                I’m open to discussing software development opportunities,
+                internships and collaborative projects related to Python,
+                web development and problem solving.
+              </p>
+
+            </div>
+
+            {/* Contact Info */}
+            <div className="space-y-4">
+
+              <a
+                href="mailto:kandarp1415@gmail.com"
+                className="
+                  flex items-center gap-4 rounded-2xl
+                  border border-cyan-400/20
+                  bg-slate-950/40 p-4
+                  transition-all duration-300
+                  hover:border-violet-400
+                "
+              >
+
+                <div
+                  className="
+                    flex h-11 w-11 items-center justify-center
+                    rounded-xl bg-cyan-400/10
+                  "
+                >
+                  <Mail size={20} className="text-cyan-300" />
+                </div>
+
+                <div>
+                  <p className="text-sm text-slate-400">
+                    Email
+                  </p>
+
+                  <p className="text-sm text-slate-200">
+                    kandarp1415@gmail.com
+                  </p>
+                </div>
+
+              </a>
+
+              <div
+                className="
+                  flex items-center gap-4 rounded-2xl
+                  border border-cyan-400/20
+                  bg-slate-950/40 p-4
+                "
+              >
+
+                <div
+                  className="
+                    flex h-11 w-11 items-center justify-center
+                    rounded-xl bg-cyan-400/10
+                  "
+                >
+                  <MapPin size={20} className="text-cyan-300" />
+                </div>
+
+                <div>
+                  <p className="text-sm text-slate-400">
+                    Location
+                  </p>
+
+                  <p className="text-sm text-slate-200">
+                    Lucknow, India
+                  </p>
+                </div>
+
+              </div>
+
+            </div>
+
+            {/* Social Links */}
+            <div className="flex gap-4 pt-2">
+
+              <a
+                href="https://linkedin.com/in/kandarp1401/"
+                target="_blank"
+                rel="noreferrer"
+                className="
+                  flex h-12 w-12 items-center justify-center
+                  rounded-2xl border border-cyan-400/20
+                  bg-slate-950/40 text-cyan-300
+                  transition-all duration-300
+                  hover:-translate-y-1
+                  hover:border-violet-400
+                  hover:text-violet-300
+                "
+              >
+                <Linkedin size={22} />
+              </a>
+
+              <a
+                href="https://github.com/kandarp-01"
+                target="_blank"
+                rel="noreferrer"
+                className="
+                  flex h-12 w-12 items-center justify-center
+                  rounded-2xl border border-cyan-400/20
+                  bg-slate-950/40 text-cyan-300
+                  transition-all duration-300
+                  hover:-translate-y-1
+                  hover:border-violet-400
+                  hover:text-violet-300
+                "
+              >
+                <Github size={22} />
+              </a>
+
+            </div>
+
+          </div>
+
+          {/* RIGHT SIDE */}
           <div
             className="
-              absolute inset-0 rounded-2xl bg-gradient-to-r from-cyan-400/25 to-violet-600/25
-              blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700
+              rounded-3xl border border-cyan-400/20
+              bg-slate-950/40 p-6
             "
-          />
+          >
 
-          <div className="relative z-10">
-            <h3 className="text-xl font-bold text-cyan-300 drop-shadow-[0_0_10px_rgba(56,189,248,0.7)]">
-              Contact Information
-            </h3>
+            <form className="space-y-5">
 
-            <div className="space-y-5 mt-6 text-sm">
-              <p className="flex items-center gap-3 text-slate-200">
-                <Mail size={18} className="text-cyan-300 drop-shadow-[0_0_8px_rgba(56,189,248,0.7)]" />
-                <a href="mailto:kandarp1415@gmail.com" className="hover:text-cyan-300 transition">
-                  kandarp1415@gmail.com
-                </a>
-              </p>
+              {/* Name */}
+              <div className="space-y-2">
 
-              <p className="flex items-center gap-3 text-slate-200">
-                <MapPin size={18} className="text-cyan-300 drop-shadow-[0_0_8px_rgba(56,189,248,0.7)]" />
-                Lucknow, India
-              </p>
+                <label className="text-sm text-slate-300">
+                  Name
+                </label>
 
-              <p className="flex items-center gap-3 text-slate-200">
-                <Phone size={18} className="text-cyan-300 drop-shadow-[0_0_8px_rgba(56,189,248,0.7)]" />
-                +91 — Available on request
-              </p>
-            </div>
+                <input
+                  type="text"
+                  placeholder="Your name"
+                  className="
+                    w-full rounded-xl border border-cyan-400/20
+                    bg-slate-900/60 px-4 py-3
+                    text-sm text-slate-200 outline-none
+                    transition-all duration-300
+                    focus:border-cyan-300
+                  "
+                />
+
+              </div>
+
+              {/* Email */}
+              <div className="space-y-2">
+
+                <label className="text-sm text-slate-300">
+                  Email
+                </label>
+
+                <input
+                  type="email"
+                  placeholder="you@example.com"
+                  className="
+                    w-full rounded-xl border border-cyan-400/20
+                    bg-slate-900/60 px-4 py-3
+                    text-sm text-slate-200 outline-none
+                    transition-all duration-300
+                    focus:border-cyan-300
+                  "
+                />
+
+              </div>
+
+              {/* Message */}
+              <div className="space-y-2">
+
+                <label className="text-sm text-slate-300">
+                  Message
+                </label>
+
+                <textarea
+                  rows="5"
+                  placeholder="Write your message..."
+                  className="
+                    w-full resize-none rounded-xl
+                    border border-cyan-400/20
+                    bg-slate-900/60 px-4 py-3
+                    text-sm text-slate-200 outline-none
+                    transition-all duration-300
+                    focus:border-cyan-300
+                  "
+                />
+
+              </div>
+
+              {/* Button */}
+              <button
+                type="submit"
+                className="
+                  w-full rounded-xl
+                  bg-gradient-to-r from-cyan-400 to-violet-500
+                  px-6 py-3 text-sm font-semibold text-slate-950
+                  transition-all duration-300
+                  hover:scale-[1.02]
+                  shadow-[0_0_25px_rgba(56,189,248,0.3)]
+                "
+              >
+                Send Message
+              </button>
+
+            </form>
+
           </div>
         </div>
-
-        {/* RIGHT FORM BOX */}
-        <form
-          className="
-            group relative rounded-2xl border border-cyan-400/30 bg-slate-900/40 backdrop-blur-xl p-6 space-y-5
-            shadow-[0_0_35px_rgba(56,189,248,0.6)] transition-all duration-500
-            hover:-translate-y-2 hover:shadow-[0_0_55px_rgba(56,189,248,1)]
-          "
-        >
-          {/* Glow overlay */}
-          <div
-            className="
-              absolute inset-0 rounded-2xl bg-gradient-to-r from-cyan-400/25 to-violet-600/25
-              blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700
-            "
-          />
-
-          <div className="relative z-10 space-y-5">
-
-            {/* NAME FIELD */}
-            <div className="flex flex-col space-y-1">
-              <label className="text-sm text-slate-300">Your Name</label>
-              <input
-                type="text"
-                className="
-                  rounded-xl border border-cyan-400/30 bg-slate-950/40 px-4 py-3 text-sm text-slate-200 outline-none transition
-                  focus:border-cyan-400 focus:shadow-[0_0_20px_rgba(56,189,248,0.7)]
-                "
-                placeholder="Enter name"
-              />
-            </div>
-
-            {/* EMAIL FIELD */}
-            <div className="flex flex-col space-y-1">
-              <label className="text-sm text-slate-300">Your Email</label>
-              <input
-                type="email"
-                className="
-                  rounded-xl border border-cyan-400/30 bg-slate-950/40 px-4 py-3 text-sm text-slate-200 outline-none transition
-                  focus:border-cyan-400 focus:shadow-[0_0_20px_rgba(56,189,248,0.7)]
-                "
-                placeholder="Enter email"
-              />
-            </div>
-
-            {/* MESSAGE FIELD */}
-            <div className="flex flex-col space-y-1">
-              <label className="text-sm text-slate-300">Message</label>
-              <textarea
-                rows="4"
-                className="
-                  rounded-xl border border-cyan-400/30 bg-slate-950/40 px-4 py-3 text-sm text-slate-200 outline-none resize-none transition
-                  focus:border-cyan-400 focus:shadow-[0_0_20px_rgba(56,189,248,0.7)]
-                "
-                placeholder="Type your message"
-              />
-            </div>
-
-            {/* BUTTON */}
-            <button
-              type="button"
-              className="
-                flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-cyan-400 to-violet-500 px-6 py-3
-                text-sm font-semibold text-slate-900 shadow-[0_0_30px_rgba(56,189,248,0.8)] transition hover:scale-110 active:scale-95
-              "
-            >
-              Send Message <Send size={16} />
-            </button>
-          </div>
-        </form>
       </div>
     </section>
   );
